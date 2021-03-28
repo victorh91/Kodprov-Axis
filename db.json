@@ -8,6 +8,7 @@
     {
       "id": 1,
       "site_id": 1,
+      "place": "Lund",
       "img": "axis-M2025.jpg",
       "title": "Demo camera 1",
       "description": "Overview of main entrance",
@@ -24,6 +25,7 @@
     {
       "id": 2,
       "site_id": 1,
+      "place": "Lund",
       "img": "axis-p1428.jpg",
       "title": "Demo camera 2",
       "description": "Cash register from above",
@@ -40,6 +42,7 @@
     {
       "id": 3,
       "site_id": 1,
+      "place": "Lund",
       "img": "axis-Q6000.jpg",
       "title": "Demo camera 3",
       "description": "Cash register from south east",
@@ -55,6 +58,7 @@
     },
     { "id": 4,
      "site_id": 2,
+     "place": "Malmo",
      "img": "axis-Q8641.jpg",
      "title": "Demo camera 4",
      "description": "Overview of warehouse",
@@ -70,6 +74,7 @@
     {
       "id": 5,
       "site_id": 2,
+      "place": "Malmo",
       "img": "axis-C3003.jpg",
       "title": "Demo hornspeaker 1",
       "description": "Store ceiling loudspeaker",
@@ -83,6 +88,7 @@
     {
       "id": 6,
       "site_id": 3,
+      "place": "Lomma",
       "img": "axis-V5914.jpg",
       "title": "Demo camera 5",
       "description": "Back entrance",
@@ -100,12 +106,16 @@
     {
       "id": 1,
       "username": "demouser1",
-      "password": "0b14d501a594442a01c6859541bcb3e8164d183d32937b851835442f69d5c94e"
+      "site_id": 1,
+      "password": "0b14d501a594442a01c6859541bcb3e8164d183d32937b851835442f69d5c94e",
+      "places": ["Lund", "Malmo"]
     },
     {
       "id": 2,
       "username": "demouser2",
-      "password": "6cf615d5bcaac778352a8f1f3360d23f02f34ec182e259897fd6ce485d7870d4"
+      "site_id": 2,
+      "password": "6cf615d5bcaac778352a8f1f3360d23f02f34ec182e259897fd6ce485d7870d4",
+      "places": ["Lomma"]
     }
   ]
 }

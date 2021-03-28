@@ -8,8 +8,7 @@ export default function devices() {
   //displays the device info for the right site
 
   const [ready, setReady] = useState(false);
-  const [theArray, setTheArray] = useState();
-  const { id } = useParams();
+  const [devices, setDevices] = useState();
 
   useEffect(() => {
     getDevices();
@@ -17,24 +16,24 @@ export default function devices() {
 
   async function getDevices() {
     //fetch the devices and return the right ones as an array as a hook
-    let uri = "http://localhost:3000/devices";
-    let thisSiteId = id;
-    const res = await fetch(uri);
+    let devices = "http://localhost:3000/devices";
+    const res = await fetch(devices);
     const posts = await res.json();
     let array = [];
     posts.map((device) => {
-      if (device.site_id == thisSiteId) {
+      if (location.pathname === "/" + device.place) {
         array.push(device);
       }
     });
-    setTheArray(array);
+    setDevices(array);
     setReady(true);
   }
+
   return (
     ready && (
       <Container fluid>
         <Row>
-          {theArray.map((device, index) => (
+          {devices.map((device, index) => (
             <Card style={{ width: "22rem" }} key={device.id}>
               <Card.Img variant="top" src={device.img} />
 

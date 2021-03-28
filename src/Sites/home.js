@@ -55,7 +55,7 @@ export default function home() {
         </Row>
         <Row>
           <Col>
-            <p classname="text">
+            <p className="text">
               Installed onto your Windows PC, AXIS Camera Management can be used
               in all sizes of installations. You can efficiently manage and
               maintain a few to several hundred Axis network video products in
@@ -75,7 +75,7 @@ export default function home() {
         </Row>
         <Row>
           <Col>
-            <p classname="text">
+            <p className="text">
               AXIS Camera Management has an intuitive user interface with
               display of device name, address, model, firmware version and
               status. Device management operations are easily accessed from
