@@ -23,7 +23,12 @@ export default function Login() {
     //gives the user an error message if the login fails
     return (
       <>
-        <Alert variant="danger" onClose={() => setShow(false)} dismissible>
+        <Alert
+          id="alertBox"
+          variant="danger"
+          onClose={() => setShow(false)}
+          dismissible
+        >
           <Alert.Heading>
             You have entered incorrect login information.{" "}
           </Alert.Heading>
@@ -83,6 +88,7 @@ export default function Login() {
           />
         </Form.Group>
         <Button
+          id="submitClick"
           block
           size="lg"
           action="/"

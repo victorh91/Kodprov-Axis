@@ -9,7 +9,7 @@ export default function home() {
   //displays the homepage for the users
   return (
     <>
-      <Container id="home container 1" fluid>
+      <Container id="homeContainer1" fluid>
         <Row>
           <Col>
             <h2 id="homeTitle">AXIS Camera Management</h2>
@@ -24,7 +24,7 @@ export default function home() {
         </Row>
       </Container>
 
-      <Container id="home container 2">
+      <Container id="homeContainer2">
         <Row>
           <Col>
             <h5 className="paragraphHeader">
@@ -47,7 +47,7 @@ export default function home() {
         </Row>
       </Container>
 
-      <Container id="home container 3">
+      <Container id="homeContainer3">
         <Row>
           <Col>
             <h5 className="paragraphHeader">All sizes of installations</h5>
@@ -67,7 +67,7 @@ export default function home() {
           </Col>
         </Row>
       </Container>
-      <Container id="home container 4">
+      <Container id="homeContainer4">
         <Row>
           <Col>
             <h5 className="paragraphHeader">Intuitive interface</h5>

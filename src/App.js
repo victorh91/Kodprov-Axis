@@ -14,25 +14,30 @@ export default function App() {
   const [places, setPlaces] = useState([]);
 
   useEffect(() => {
-    async function checkUser() {
-      //authenticate the user based on localstorage and db credentials
-      let uri = "http://localhost:3000/users";
-      const res = await fetch(uri);
-      const posts = await res.json();
-      posts.map((name) => {
-        if (
-          name.username === localStorage.username &&
-          name.password === localStorage.password
-        ) {
-          userHasAuthenticated(true);
-          places.push(name.places);
-        }
-        setIsAuthenticating(false);
-      });
-    }
     checkUser();
   }, []);
 
+  async function checkUser() {
+    //authenticate the user based on localstorage and db credentials
+    let uri = "http://localhost:3000/users";
+    const res = await fetch(uri);
+    const posts = await res.json();
+    posts.map((name) => {
+      if (
+        name.username === localStorage.username &&
+        name.password === localStorage.password
+      ) {
+        console.log("inne");
+        console.log(places);
+        places.push(name.places);
+        userHasAuthenticated(true);
+      } else {
+        console.log("fail");
+        places.push(name.places);
+      }
+      setIsAuthenticating(false);
+    });
+  }
   return (
     !isAuthenticating && (
       <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
@@ -43,14 +48,16 @@ export default function App() {
               <Devices />
               <Switch>
                 <Route exact path="/" component={home} />
-                {places[0].map((place, index) => (
-                  <Route
-                    exact
-                    path={("/", place)}
-                    component={Devices}
-                    key={index}
-                  />
-                ))}
+                {places &&
+                  places[0].map((place, index) => (
+                    <Route
+                      exact
+                      path={("/", place)}
+                      component={Devices}
+                      key={index}
+                    />
+                  ))}
+
                 <Route path="/login" component={Login} />
               </Switch>
             </div>
